@@ -6,7 +6,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 tlsCommunication:
-  enabled: true # TODO: true
+  enabled: true
   # ## Secret name containing the TLS certificate for checkmk with the fields: cluster-collector-key, cluster-collector-cert, checkmk-ca-cert
   # ## Secret must be manually created in the namespace. If left 
   # tlsSecretName: ""

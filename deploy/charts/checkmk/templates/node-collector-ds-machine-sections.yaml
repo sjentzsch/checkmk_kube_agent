@@ -47,7 +47,7 @@ spec:
             - "--log-level={{ .Values.nodeCollector.logLevel }}"
           {{- if .Values.tlsCommunication.enabled }}
             - "--secure-protocol"
-            #- "--verify-ssl"
+            #- "--verify-ssl" # TODO enable again
           {{- end }}
           {{- if .Values.tlsCommunication.enabled }}
           volumeMounts:
