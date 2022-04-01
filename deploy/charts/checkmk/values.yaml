@@ -24,7 +24,7 @@ tlsCommunication:
 imagePullSecrets: []
 image:
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "main_2022.03.02" # main_<YYYY.MM.DD>
+  tag: "main_2022.03.03" # main_<YYYY.MM.DD>
 
 rbac:
   pspEnabled: true
