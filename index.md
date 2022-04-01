@@ -6,7 +6,6 @@
 
 ```sh
 helm repo add checkmk https://sjentzsch.github.io/checkmk_kube_agent
-
 ```
 
 ## Install checkmk
