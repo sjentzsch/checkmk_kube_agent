@@ -18,11 +18,16 @@ helm repo update
 
 _See [helm repo](https://helm.sh/docs/helm/helm_repo/) for command documentation._ -->
 
+## Add the Checkmk Helm repository
+
+```console
+helm repo add checkmk https://sjentzsch.github.io/checkmk_kube_agent
+```
+
 ## Install & Upgrade Chart
 
 ```console
-# Helm
-helm upgrade --install --create-namespace -n [RELEASE_NAMESPACE] [RELEASE_NAME] [-f values.yaml] .
+helm upgrade --install --create-namespace -n [RELEASE_NAMESPACE] [RELEASE_NAME] [-f values.yaml] checkmk/checkmk
 ```
 
 Note that the flag `--create-namespace` will create the specified namespace `RELEASE_NAMESPACE` if it does not yet exists.
@@ -34,7 +39,6 @@ _See [helm install](https://helm.sh/docs/helm/helm_install/) for command documen
 ## Uninstall Chart
 
 ```console
-# Helm
 helm uninstall -n [RELEASE_NAMESPACE] [RELEASE_NAME]
 ```
 
@@ -49,7 +53,7 @@ The [helm-diff](https://github.com/databus23/helm-diff) plugin gives us the poss
 Install it via `helm plugin install https://github.com/databus23/helm-diff`, then you can run the following prior to an install or upgrade command:
 
 ```console
-# Helm (requires helm-diff plugin)
+# Requires helm-diff plugin
 helm diff upgrade --install -n [RELEASE_NAMESPACE] [RELEASE_NAME] [-f values.yaml] .
 ```
 
@@ -58,7 +62,6 @@ helm diff upgrade --install -n [RELEASE_NAMESPACE] [RELEASE_NAME] [-f values.yam
 To render plain Kubernetes manifests from the Helm chart, run:
 
 ```console
-# Helm
 helm template -n [RELEASE_NAMESPACE] [RELEASE_NAME] .
 ```
 
