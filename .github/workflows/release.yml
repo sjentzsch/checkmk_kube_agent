@@ -28,6 +28,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.4.0
         with:
           charts_dir: deploy/charts
-          charts_repo_url: https://sjentzsch.github.io/checkmk_kube_agent
+          #charts_repo_url: https://sjentzsch.github.io/checkmk_kube_agent
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
